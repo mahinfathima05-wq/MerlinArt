@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#159D9A">
+  <meta name="description" content="Private enquiry dashboard for Merlin Art N Texture Enterprises.">
+  <title>Admin Dashboard | Merlin Art N Texture Enterprises</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body class="admin-page">
+  <header class="admin-header">
+    <a class="brand" href="index.html" aria-label="Merlin home">
+      <img src="images/Merlin-Logo.png" alt="">
+      <span>MERLIN <small>ART N TEXTURE ENTERPRISES</small></span>
+    </a>
+    <div class="admin-header-links">
+      <a class="admin-back-link" href="admin.html" aria-current="page">Admin</a>
+      <a class="admin-back-link" href="contact.html">Contact</a>
+      <a class="admin-back-link" href="index.html">Back to website ↗</a>
+    </div>
+  </header>
+
+  <main class="admin-main">
+    <section class="admin-login admin-panel" id="loginPanel">
+      <p class="section-label">PRIVATE ADMIN AREA</p>
+      <h1>Welcome <span>back.</span></h1>
+      <p class="admin-intro">Sign in with your authorized admin account to review saved customer details and manage gallery images.</p>
+      <form id="loginForm">
+        <label for="adminEmail">Email address</label>
+        <input id="adminEmail" name="email" type="email" autocomplete="username" required>
+        <label for="adminPassword">Password</label>
+        <input id="adminPassword" name="password" type="password" autocomplete="current-password" required>
+        <button class="button button-gold" id="loginButton" type="submit">Sign in</button>
+      </form>
+      <p class="admin-status" id="loginStatus" role="status" aria-live="polite"></p>
+    </section>
+
+    <section class="admin-dashboard" id="dashboardPanel" hidden>
+      <div class="admin-heading">
+        <div>
+          <p class="section-label">MERLIN / ADMIN</p>
+          <h1>Admin <span>dashboard.</span></h1>
+          <p class="admin-intro">Review saved customer contact, service and project details, and manage the project gallery.</p>
+        </div>
+        <button class="button button-outline" id="signOutButton" type="button">Sign out</button>
+      </div>
+
+      <div class="admin-metrics" aria-label="Enquiry totals">
+        <article class="admin-metric"><span>ALL ENQUIRIES</span><strong id="totalCount">0</strong></article>
+        <article class="admin-metric"><span>NEW</span><strong id="newCount">0</strong></article>
+        <article class="admin-metric"><span>IN PROGRESS</span><strong id="progressCount">0</strong></article>
+        <article class="admin-metric"><span>COMPLETED</span><strong id="completedCount">0</strong></article>
+      </div>
+
+      <section class="admin-list-panel admin-panel" aria-labelledby="enquiryHeading">
+        <div class="admin-list-heading">
+          <div>
+            <h2 id="enquiryHeading">Quotation requests</h2>
+            <p>Customer details, requested services and project notes from the contact and services forms appear here. Edit or delete requests as needed.</p>
+          </div>
+          <div class="admin-filters">
+            <label class="visually-hidden" for="searchEnquiries">Search enquiries</label>
+            <input id="searchEnquiries" type="search" placeholder="Search name, phone, email…">
+            <label class="visually-hidden" for="statusFilter">Filter by status</label>
+            <select id="statusFilter">
+              <option value="all">All statuses</option>
+              <option value="new">New</option>
+              <option value="in-progress">In progress</option>
+              <option value="completed">Completed</option>
+            </select>
+          </div>
+        </div>
+        <p class="admin-list-status" id="listStatus" role="status" aria-live="polite">Loading enquiries…</p>
+        <div class="enquiry-list" id="enquiryList"></div>
+      </section>
+
+      <section class="admin-list-panel admin-panel gallery-admin-panel" id="galleryManager" aria-labelledby="galleryHeading">
+        <div class="admin-list-heading">
+          <div>
+            <h2 id="galleryHeading">Gallery images</h2>
+            <p>Add project photos, update their titles and descriptions, or remove images from the website gallery.</p>
+          </div>
+        </div>
+        <form class="gallery-add-form" id="galleryForm">
+          <div class="gallery-form-fields">
+            <label>Image title
+              <input name="title" type="text" maxlength="120" required>
+            </label>
+            <label>Image description
+              <input name="alt" type="text" maxlength="250" required>
+            </label>
+            <label>Gallery folder
+              <select name="category" required>
+                <option value="" selected disabled>Choose a folder</option>
+              </select>
+            </label>
+            <label>Image file
+              <input name="image" type="file" accept="image/*" required>
+            </label>
+          </div>
+          <button class="button button-gold" id="addGalleryButton" type="submit">Add image</button>
+        </form>
+        <p class="admin-list-status" id="galleryStatus" role="status" aria-live="polite">Loading gallery…</p>
+        <div class="gallery-admin-list" id="galleryAdminList"></div>
+      </section>
+    </section>
+  </main>
+
+  <script type="module" src="admin.js"></script>
+</body>
+</html>

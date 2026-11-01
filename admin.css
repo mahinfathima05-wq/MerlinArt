@@ -1,0 +1,213 @@
+.admin-page { min-height: 100vh; padding-top: 88px; }
+.admin-header {
+  min-height: 82px;
+  padding: 12px 7%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  border-bottom: 1px solid var(--border);
+  background: rgba(255, 255, 255, .96);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  backdrop-filter: blur(16px);
+}
+.admin-header .brand img { width: 64px; height: 64px; }
+.admin-header .brand { transform: translateY(-4px); }
+.admin-back-link { color: var(--muted); font-size: 14px; }
+.admin-back-link:hover { color: var(--blue); }
+.admin-header-links { display: flex; align-items: center; gap: 22px; }
+.admin-main { width: min(1120px, 86%); margin: 16px auto 62px; }
+.admin-panel {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  transition: border-color .25s, box-shadow .25s;
+}
+.admin-panel:hover,
+.admin-panel:active,
+.admin-panel:focus-within,
+.admin-metric:hover,
+.enquiry-card:hover,
+.enquiry-card:active,
+.enquiry-card:focus-within {
+  box-shadow: 0 0 18px rgba(84, 160, 255, .2);
+}
+.admin-login { width: min(460px, 100%); margin: 5vh auto; padding: 36px; }
+.admin-login h1, .admin-heading h1 { margin-top: 10px; font-size: clamp(38px, 5vw, 54px); }
+.admin-intro { color: var(--muted); font-size: 15px; margin-top: 12px; }
+.admin-login form { margin-top: 25px; }
+.admin-login label { display: block; margin: 16px 0 6px; color: var(--text); font-size: 14px; }
+.admin-login input, .admin-filters input, .admin-filters select, .status-select {
+  min-height: 44px;
+  padding: 10px 12px;
+  color: var(--text);
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  outline: none;
+  font-size: 16px;
+}
+.admin-login input { width: 100%; }
+.admin-login input:focus, .admin-filters input:focus, .admin-filters select:focus, .status-select:focus {
+  border-color: var(--light-blue);
+}
+.admin-login .button { width: 100%; margin-top: 24px; }
+.admin-login .button:disabled, .admin-dashboard button:disabled { cursor: wait; opacity: .65; }
+.admin-status, .admin-list-status { color: var(--teal); font-size: 14px; }
+.admin-status { margin-top: 14px; }
+.admin-heading { display: flex; align-items: flex-end; justify-content: space-between; gap: 25px; }
+.admin-heading .button { flex: 0 0 auto; }
+.admin-dashboard .button-outline { border-color: var(--blue); color: var(--blue); }
+.admin-dashboard .button-outline:hover { background: var(--panel-light); }
+.admin-metrics {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  margin: 32px 0;
+}
+.admin-metric { padding: 20px; background: var(--panel); border: 1px solid var(--border); transition: border-color .25s, box-shadow .25s; }
+.admin-metric span { display: block; color: var(--text); font-size: 11px; font-weight: 700; letter-spacing: 1px; }
+.admin-metric strong { display: block; margin-top: 7px; font-family: "Poppins", sans-serif; font-size: 32px; font-weight: 500; }
+.admin-list-panel { padding: 24px; }
+.gallery-admin-panel { margin-top: 24px; }
+.gallery-add-form { margin-top: 24px; padding: 18px; border: 1px solid var(--border); }
+.gallery-form-fields { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.gallery-add-form label, .gallery-edit-form label { display: block; color: var(--text); font-size: 13px; }
+.gallery-add-form input, .gallery-add-form select, .gallery-edit-form input, .gallery-edit-form select {
+  display: block;
+  width: 100%;
+  min-height: 42px;
+  margin-top: 6px;
+  padding: 9px;
+  color: var(--text);
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  font: inherit;
+  font-size: 16px;
+}
+.gallery-add-form input[type="file"], .gallery-edit-form input[type="file"] { padding: 7px; }
+.gallery-add-form select, .gallery-edit-form select { padding: 9px; }
+.gallery-add-form .button { margin-top: 16px; }
+.gallery-admin-list { display: grid; gap: 20px; }
+.gallery-admin-folder { padding: 16px; border: 1px solid var(--border); }
+.gallery-admin-folder-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin-bottom: 14px; }
+.gallery-admin-folder-heading h3 { font-size: 18px; }
+.gallery-admin-folder-heading span, .gallery-admin-folder-empty { color: var(--muted); font-size: 13px; }
+.gallery-admin-folder-images { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+.gallery-admin-card { display: grid; grid-template-columns: minmax(130px, .8fr) minmax(0, 1.2fr); gap: 16px; padding: 14px; background: var(--panel); border: 1px solid var(--border); }
+.gallery-admin-card > img { width: 100%; height: 100%; min-height: 170px; max-height: 240px; object-fit: cover; }
+.gallery-edit-form { display: grid; align-content: start; gap: 11px; }
+.gallery-card-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px; }
+.gallery-card-actions .button { min-height: 42px; padding: 9px 13px; font-size: 13px; }
+.gallery-admin-panel .admin-list-status { margin-bottom: 14px; }
+.admin-list-heading { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+.admin-list-heading h2 { font-size: 25px; }
+.admin-list-heading p { margin-top: 5px; color: var(--muted); font-size: 14px; }
+.admin-filters { display: flex; gap: 8px; }
+.admin-filters input { width: min(280px, 32vw); }
+.admin-filters select { min-width: 135px; }
+.admin-list-status { margin: 22px 0; }
+.enquiry-list { display: grid; gap: 12px; }
+.enquiry-card { padding: 20px; background: var(--panel); border: 1px solid var(--border); transition: border-color .25s, box-shadow .25s; }
+.enquiry-card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 18px; }
+.enquiry-name { font-family: "Poppins", sans-serif; font-size: 21px; font-weight: 500; }
+.enquiry-date { margin-top: 2px; color: var(--muted); font-size: 13px; }
+.enquiry-status-control { display: flex; align-items: center; gap: 8px; }
+.status-select { min-height: 42px; padding: 7px 10px; font-size: 14px; }
+.status-select.status-new { border-color: var(--teal); }
+.status-select.status-in-progress { border-color: var(--light-blue); }
+.status-select.status-completed { border-color: #8a91a0; }
+.status-select.is-saving { opacity: .6; }
+.enquiry-details { display: flex; flex-wrap: wrap; gap: 7px 22px; margin-top: 15px; }
+.enquiry-service { width: 100%; color: var(--blue); font-size: 14px; }
+.enquiry-contact { color: var(--text); font-size: 14px; overflow-wrap: anywhere; }
+.enquiry-message { margin-top: 13px; padding-top: 12px; border-top: 1px solid var(--border); color: var(--muted); font-size: 14px; white-space: pre-wrap; overflow-wrap: anywhere; }
+.enquiry-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+.enquiry-actions .button { min-height: 42px; padding: 9px 13px; font-size: 13px; }
+.enquiry-edit-form { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--border); }
+.enquiry-edit-form label { display: block; color: var(--text); font-size: 13px; }
+.enquiry-edit-form input:not([type="checkbox"]), .enquiry-edit-form select, .enquiry-edit-form textarea {
+  display: block;
+  width: 100%;
+  min-height: 42px;
+  margin-top: 6px;
+  padding: 9px;
+  color: var(--text);
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  font: inherit;
+  font-size: 16px;
+}
+.enquiry-edit-form textarea { resize: vertical; }
+.enquiry-edit-form .enquiry-project-details, .enquiry-edit-form .enquiry-actions { grid-column: 1 / -1; }
+.enquiry-edit-form .enquiry-consent { display: flex; align-items: center; gap: 8px; }
+.enquiry-edit-form input[type="checkbox"] { width: 18px; height: 18px; margin: 0; }
+.enquiry-edit-form input, .enquiry-edit-form select, .enquiry-edit-form textarea { border-image: linear-gradient(var(--rainbow-angle), #ff4d9d, #ff78d1, #72f1b8, #54a0ff, #c77dff, #ff4d9d) 1; }
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+.admin-panel,
+.admin-metric,
+.gallery-add-form,
+.gallery-admin-folder,
+.gallery-admin-card,
+.enquiry-card,
+.admin-login input,
+.admin-filters input,
+.admin-filters select,
+.status-select,
+.gallery-add-form input,
+.gallery-add-form select,
+.gallery-edit-form input,
+.gallery-edit-form select {
+  border-image: linear-gradient(var(--rainbow-angle), #ff4d9d, #ff78d1, #72f1b8, #54a0ff, #c77dff, #ff4d9d) 1;
+}
+.gallery-admin-card > img {
+  border: 1px solid transparent;
+  border-image: linear-gradient(var(--rainbow-angle), #ff4d9d, #ff78d1, #72f1b8, #54a0ff, #c77dff, #ff4d9d) 1;
+}
+
+@media (max-width: 760px) {
+  .admin-main { width: 90%; margin: 16px auto; }
+  .admin-metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .admin-list-heading { align-items: stretch; flex-direction: column; }
+  .admin-filters input { width: 100%; }
+  .admin-filters select { flex: 0 0 135px; }
+  .gallery-admin-list { grid-template-columns: 1fr; }
+  .gallery-form-fields, .gallery-admin-folder-images { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 480px) {
+  .admin-page { padding-top: 98px; }
+  .admin-header { align-items: stretch; flex-direction: column; gap: 8px; padding: 10px 5%; }
+  .admin-header .brand { gap: 8px; }
+  .admin-header .brand img { width: 50px; height: 50px; }
+  .admin-header .brand > span { font-size: 17px; }
+  .admin-header .brand small { font-size: 8px; letter-spacing: .8px; }
+  .admin-header-links { width: 100%; justify-content: space-between; gap: 8px; }
+  .admin-back-link { font-size: 12px; white-space: nowrap; }
+  .admin-login h1, .admin-heading h1 { font-size: clamp(32px, 9vw, 42px); }
+  .admin-login { padding: 24px; }
+  .admin-heading { align-items: flex-start; flex-direction: column; }
+  .admin-list-panel { padding: 16px; }
+  .admin-filters { flex-direction: column; }
+  .admin-filters select { flex-basis: auto; }
+  .enquiry-card { padding: 15px; }
+  .enquiry-edit-form { grid-template-columns: 1fr; }
+  .enquiry-edit-form .enquiry-project-details, .enquiry-edit-form .enquiry-actions { grid-column: auto; }
+  .gallery-admin-card { grid-template-columns: 1fr; }
+  .gallery-admin-card > img { height: 190px; }
+}
